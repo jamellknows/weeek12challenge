@@ -93,7 +93,7 @@ function generateTeam(team){
 </body>
 </html>
     `;
-
+    html.push(top_template);
     html.push(team
         .filter(employee => employee.getRole() === "Manager")
         .map(manager => generateManager(manager))
@@ -108,6 +108,7 @@ function generateTeam(team){
         .map(intern => generateIntern(intern))
         .join("")
     );
+    html.push(bottom_template);
 
     return html.join("");
 
@@ -116,9 +117,3 @@ function generateTeam(team){
 }
 module.exports = {generateTeam: generateTeam}
 
-// exports function to generate entire page
-// module.exports = team => {
-
-//     return
- 
-// };
